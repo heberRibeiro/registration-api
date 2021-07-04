@@ -1,8 +1,14 @@
+import Student from '../models/Student';
+
 class Home {
-  index(req, res) {
-    res.json({
-      tudoCerto: true,
+  async index(req, res) {
+    const newStudent = await Student.create({
+      name: 'José',
+      lastName: 'da Silva',
+      age: 50,
     });
+
+    res.json(newStudent);
   }
 }
 

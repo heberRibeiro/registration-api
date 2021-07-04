@@ -1,5 +1,9 @@
-import express from 'express';
-import home from './src/routes/home';
+import dotenv from 'dotenv'; // eslint-disable-line
+dotenv.config();
+
+import './src/database'; // eslint-disable-line
+import express from 'express'; // eslint-disable-line
+import home from './src/routes/home'; // eslint-disable-line
 
 class App {
   constructor() {
