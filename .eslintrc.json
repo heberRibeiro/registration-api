@@ -13,6 +13,7 @@
     "rules": {
       "no-console": "off",
       "class-methods-use-this": "off",
-      "arrow-parens": ["error", "as-needed"]
+      "arrow-parens": ["error", "as-needed"],
+      "no-param-reassign": "off"
     }
 }
