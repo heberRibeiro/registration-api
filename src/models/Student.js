@@ -5,6 +5,7 @@ export default class Student extends Model {
     super.init({
       name: Sequelize.STRING,
       lastName: Sequelize.STRING,
+      email: Sequelize.STRING,
       age: Sequelize.INTEGER,
     }, {
       sequelize,
