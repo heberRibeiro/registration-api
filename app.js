@@ -1,9 +1,11 @@
-import dotenv from 'dotenv'; // eslint-disable-line
-dotenv.config();
+import dotenv from 'dotenv';
 
-import './src/database'; // eslint-disable-line
-import express from 'express'; // eslint-disable-line
-import home from './src/routes/home'; // eslint-disable-line
+import './src/database';
+import express from 'express';
+import home from './src/routes/home';
+import user from './src/routes/user';
+
+dotenv.config();
 
 class App {
   constructor() {
@@ -19,6 +21,7 @@ class App {
 
   routes() {
     this.app.use('/', home);
+    this.app.use('/users/', user);
   }
 }
 

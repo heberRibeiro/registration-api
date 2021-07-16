@@ -5,6 +5,7 @@ class Home {
     const newStudent = await Student.create({
       name: 'José',
       lastName: 'da Silva',
+      email: 'jose@jose.com',
       age: 50,
     });
 
