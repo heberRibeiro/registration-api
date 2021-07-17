@@ -1,8 +1,16 @@
 import Student from '../models/Student';
+import File from '../models/File';
 
 class StudentController {
   async list(req, res) {
-    const students = await Student.findAll();
+    const students = await Student.findAll({
+      attributes: ['id', 'name', 'lastName', 'email', 'age'],
+      order: [['id', 'DESC'], [File, 'id', 'DESC']],
+      include: {
+        model: File,
+        attributes: ['filename'],
+      },
+    });
     res.json(students);
   }
 
@@ -55,7 +63,14 @@ class StudentController {
         });
       }
 
-      const student = await Student.findByPk(id);
+      const student = await Student.findByPk(id, {
+        attributes: ['id', 'name', 'lastName', 'email', 'age'],
+        order: [['id', 'DESC'], [File, 'id', 'DESC']],
+        include: {
+          model: File,
+          attributes: ['filename'],
+        },
+      });
       res.json(student);
     } catch (e) {
       res.status(400).json({
