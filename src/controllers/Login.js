@@ -31,7 +31,7 @@ class Login {
 
     const token = jwt.sign(payload, process.env.TOKEN_SECRET, options);
 
-    res.json({ token });
+    res.json({ token, user: { name: user.name, id, email } });
   }
 }
 
