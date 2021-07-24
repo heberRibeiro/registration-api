@@ -1,7 +1,12 @@
+// global
 import dotenv from 'dotenv';
 import { resolve } from 'path';
-import './src/database';
 import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+// config
+import './src/database';
+// local
 import home from './src/routes/home';
 import user from './src/routes/user';
 import login from './src/routes/login';
@@ -18,6 +23,8 @@ class App {
   }
 
   middlewares() {
+    this.app.use(cors());
+    this.app.use(helmet());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
     this.app.use(express.static(resolve(__dirname, 'uploads')));
