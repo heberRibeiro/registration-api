@@ -1,13 +1,25 @@
 version: '3.8'
 
 services:
+  api:
+    build: .
+    ports:
+      - 8080:${BACKEND_SERVER_PORT}
+    depends_on:
+      - db
+    container_name: student-registration-api
+    volumes:
+      - type: bind
+        source: ./src
+        target: /usr/src/app/src
   db:
-    image: mariadb
-    container_name: mariadb-container
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: mysqldb-container
     ports:
     - "3307:3306"
     volumes:
       - "./database:/var/lib/mysql"
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: "${DATABASE_PASSWORD}"
-    restart: always
