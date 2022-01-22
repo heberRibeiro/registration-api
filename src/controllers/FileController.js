@@ -8,7 +8,7 @@ class FileController {
   create(req, res) {
     return upload(req, res, async err => {
       if (err) {
-        res.status(400).json({
+        return res.status(400).json({
           errors: [err.code],
         });
       }
@@ -18,9 +18,9 @@ class FileController {
         const { student_id } = req.body;
         const file = await File.create({ originalname, filename, student_id });
 
-        res.json(file);
+        return res.json(file);
       } catch (e) {
-        res.status(400).json({
+        return res.status(400).json({
           errors: ['Aluno não existe'],
         });
       }
