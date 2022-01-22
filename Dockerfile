@@ -3,8 +3,8 @@ FROM node:14
 # Create app directory
 WORKDIR /usr/src/app
 
-# Copy both package.json and package-lock.json
-COPY package*.json ./
+# Copy project
+COPY . .
 
 # Install app dependencies
 RUN npm install
