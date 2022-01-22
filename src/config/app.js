@@ -1,3 +1,8 @@
+require('dotenv').config();
+
+const host = process.env.BACKEND_SERVER_HOST;
+const port = process.env.BACKEND_SERVER_PORT;
+
 export default {
-  url: 'http://localhost:3001',
+  url: `http://${host}:${port}`,
 };
