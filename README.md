@@ -14,8 +14,10 @@ Tecnologias e ferramenta para rodar o projeto:
 * [MySQL](https://www.mysql.com/downloads/)
 
 ### Rodando o projeto com Docker e Docker Compose
-Para executar o projeto é necessário preencher o arquivo .env com as variáveis necessárias - host, porta, nome de database, usuário e senha conforme conveniência - e executar o comando:
+Para executar o projeto é necessário preencher o arquivo .env com as variáveis necessárias - host, porta, nome de database, usuário e senha conforme conveniência - e executar os comandos:
 
+> npm install
+>
 > docker-compose up -d
 
 ### Tecnologias e ferramentas usadas no projeto
