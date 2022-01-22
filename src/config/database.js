@@ -15,8 +15,5 @@ module.exports = {
     updatedAt: 'updated_at',
 
   },
-  dialectOptions: {
-    timeZone: 'America/Recife',
-  },
   timeZone: 'America/Recife',
 };
