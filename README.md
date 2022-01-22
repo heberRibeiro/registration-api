@@ -1,9 +1,9 @@
 # ***Student Registration - API Rest***
 
-### Descrição
+## Descrição
 *API Rest representa o backend da aplicação Student Registration.*
 
-### Exigências
+## Exigências
 
 Tecnologias e ferramenta para rodar o projeto:
 
@@ -13,14 +13,20 @@ Tecnologias e ferramenta para rodar o projeto:
 * [VSCode](https://code.visualstudio.com/Download)
 * [MySQL](https://www.mysql.com/downloads/)
 
-### Rodando o projeto com Docker e Docker Compose
+## Executando o projeto com Docker e Docker Compose
 Para executar o projeto é necessário preencher o arquivo .env com as variáveis necessárias - host, porta, nome de database, usuário e senha conforme conveniência - e executar os comandos:
 
 > npm install
 >
 > docker-compose up -d
 
-### Tecnologias e ferramentas usadas no projeto
+Os comandos das migrations e seeds devem ser realizados no container da aplicação, para acessa o container executar:
+
+> docker exec -it student-registration-api bash
+
+----------
+
+## Tecnologias e ferramentas usadas no projeto
 
 * Node 14
 * Docker
