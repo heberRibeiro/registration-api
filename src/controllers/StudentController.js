@@ -4,14 +4,14 @@ import File from '../models/File';
 class StudentController {
   async list(req, res) {
     const students = await Student.findAll({
-      attributes: ['id', 'name', 'lastName', 'email', 'age'],
+      attributes: ['id', 'name', 'last_name', 'email', 'age'],
       order: [['id', 'DESC'], [File, 'id', 'DESC']],
       include: {
         model: File,
         attributes: ['url', 'filename'],
       },
     });
-    res.json(students);
+    await res.json(students);
   }
 
   async create(req, res) {
