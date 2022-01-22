@@ -7,7 +7,6 @@ import helmet from 'helmet';
 // config
 import './src/database';
 // local
-import home from './src/routes/home';
 import user from './src/routes/user';
 import login from './src/routes/login';
 import student from './src/routes/student';
@@ -31,7 +30,6 @@ class App {
   }
 
   routes() {
-    this.app.use('/', home);
     this.app.use('/users/', user);
     this.app.use('/login/', login);
     this.app.use('/students/', student);
